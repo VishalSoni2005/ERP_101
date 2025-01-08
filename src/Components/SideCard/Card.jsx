@@ -96,14 +96,14 @@ function SidebarItem({ icon, label, dropdownOptions }) {
   return (
     <div className="relative">
       {/* Sidebar Item */}
-      <div className="flex items-center gap-4 px-4 py-3 border-2 border-gray-700 rounded-3xl hover:bg-gray-700 hover:shadow-lg transition-all duration-200 ease-in-out group cursor-pointer">
+      <div className="flex items-center gap-4 px-4 py-3 border-2 border-gray-700 rounded-3xl hover:bg-gray-700 hover:shadow-lg transition-all duration-200 ease-in-out group">
         <img src={icon} alt="" className="w-10 h-10" />
-        <span className="font-bold group-hover:text-yellow-300">{label}</span>
+        <span className="font-bold group-hover:text-yellow-300 hover:underline cursor-pointer">{label}</span>
 
         {/* Plus Icon for Dropdown */}
         {dropdownOptions && (
           <img
-            src={bluePlus}
+            src={bluePlus} 
             className={`w-6 h-6 ml-auto cursor-pointer transition-transform duration-200 ease-in-out ${
               isDropdownVisible ? 'rotate-45' : ''
             }`}
