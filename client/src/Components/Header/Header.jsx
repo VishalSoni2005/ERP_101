@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-gray-900 flex justify-between items-center w-full p-2 overflow-hidden shadow-lg fixed top-0 z-50">
+      <nav className="bg-gray-900 flex justify-between items-center w-full p-2 overflow-hidden shadow-lg fixed top-0 z-50">
         {/* Sidebar Toggle */}
         <div
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -45,7 +45,7 @@ export default function Header() {
             type="text"
             placeholder="Search..."
           />
-          <button className="p-2  bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
+          <button className="p-2 md:block bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
             <img
               src={daysearch}
               className="w-5 h-5 hover:scale-110 transition-transform duration-300"
@@ -65,7 +65,7 @@ export default function Header() {
             Vishal Kumar Soni
           </span>
         </div>
-      </div>
+      </nav>
 
       {/* Sidebar Card */}
       {isSidebarOpen && <Card />}
