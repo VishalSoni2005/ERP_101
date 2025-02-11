@@ -6,7 +6,6 @@ import { useState } from 'react';
 import Card from '/src/Components/SideCard/Card.jsx';
 
 export default function Header() {
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
@@ -20,7 +19,9 @@ export default function Header() {
           <img
             src={SideBarico}
             alt="Sidebar Icon"
-            className={`w-12 h-12 rounded-lg bg-gray-500 transform transition-transform duration-500 ${isSidebarOpen ? 'rotate-180' : ''}`}
+            className={`w-12 h-12 rounded-lg bg-gray-500 transform transition-transform duration-500 ${
+              isSidebarOpen ? 'rotate-180' : ''
+            }`}
           />
         </div>
 
@@ -28,22 +29,23 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <img
             src={I2IT}
-            className="w-16 h-14 rounded-xl shadow-lg transition-transform hover:scale-110 duration-300"
+            className="w-14 h-14 rounded-xl shadow-lg transition-transform hover:scale-110 duration-300"
             alt="I2IT Logo"
           />
-          <span className="text-2xl text-white font-semibold hover:text-gray-300 transition-colors duration-300">
+          {/* Hide institute name on medium screens */}
+          <span className="text-2xl text-white font-semibold hover:text-gray-300 transition-colors duration-300 hidden md:block">
             International Institute of Information Technology
           </span>
         </div>
 
-        {/* Search bar */}
-        <div className="flex items-center bg-gray-800 rounded-full shadow-md w-96 h-12 px-4 text-white hover:ring-2 ring-gray-400 transition-all duration-300">
+        {/* Search bar - Hide on medium screens */}
+        <div className="hidden md:flex items-center bg-gray-800 rounded-full shadow-md w-96 h-12 px-4 text-white hover:ring-2 ring-gray-400 transition-all duration-300">
           <input
             className="w-full bg-transparent px-4 py-2 text-sm outline-none text-white placeholder-gray-400"
             type="text"
             placeholder="Search..."
           />
-          <button className="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
+          <button className="p-2  bg-gray-700 rounded-full hover:bg-gray-600 transition-colors duration-300">
             <img
               src={daysearch}
               className="w-5 h-5 hover:scale-110 transition-transform duration-300"
@@ -59,15 +61,14 @@ export default function Header() {
             className="w-12 h-12 rounded-full border-2 border-gray-500 hover:ring-2 ring-gray-400 transition-all duration-300"
             alt="User Avatar"
           />
-          <span className="text-white font-bold hover:text-gray-300 transition-colors duration-300">
+          <span className="text-white font-bold hover:text-gray-300 transition-colors duration-300 ">
             Vishal Kumar Soni
           </span>
         </div>
       </div>
 
-      {isSidebarOpen && (
-          <Card />
-      )}
+      {/* Sidebar Card */}
+      {isSidebarOpen && <Card />}
     </>
   );
 }
